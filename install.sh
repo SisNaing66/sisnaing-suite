@@ -2,14 +2,14 @@
 
 INSTALL_DIR="/usr/local/sisnaing"
 
-echo "Installing SisNaing Professional Suite..."
+apt update -y
+apt install git -y
 
-mkdir -p $INSTALL_DIR
-cd $INSTALL_DIR
+rm -rf $INSTALL_DIR
 
-curl -O https://raw.githubusercontent.com/SisNaing66/sisnaing-suite/main/menu.sh
-chmod +x menu.sh
+git clone https://github.com/SisNaing66/sisnaing-suite.git $INSTALL_DIR
 
+chmod +x $INSTALL_DIR/menu.sh
 ln -sf $INSTALL_DIR/menu.sh /usr/bin/sisnaing
 
 echo "Installation Complete!"
